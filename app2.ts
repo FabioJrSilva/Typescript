@@ -1,43 +1,37 @@
-class Carro 
-{
-    private modelo: string;
-    private cor: string;
-    private numeroDePortas: number;
-    private velocidade: number = 0;
+import Carro  from "./Carro"
+import Concessionario  from "./Concessionaria"
+import Pessoa  from "./Pessoa"
 
-    constructor(modelo: string, cor: string, portas: number)
-    {
-        this.modelo = modelo;
-        this.cor = cor;
-        this. numeroDePortas = portas;
-    }
+/* --- Criando objetos do tipo Carro --- */
+let carroA = new Carro("Civic", "Preto", 4) 
+let carroB = new Carro("Focus", "Preto", 4)
+let carroC = new Carro("Veloster", "Preto", 3)
+let carroE = new Carro("i30", "Branco", 4)
+let carroF = new Carro("Uno", "Vermelho", 2)
 
-    /**
-     * acelerar
-     */
-    public acelerar(): void 
-    {
-        this.velocidade += 10;
-    }
+/* --- Criando Arrey de Carros e,
+montando a lista de carros da concessionaria --- */
+/* --- Formas diferentes de criação de Arreys ---
+let listaDeCarros: Carro[] = [carroA, carroB, carroC, carroE, carroF]
+let listaDeCarros: Array<Carro> = [carroA, carroB, carroC, carroE, carroF]
+*/
 
-    /**
-     * parar
-     */
-    public parar(): void
-    {
-        this.velocidade = 0;
-    }
+let listaDeCarros: Array<Carro> = [carroA, carroB, carroC, carroE, carroF]
+let concessionaria = new Concessionario("Av. Paulista",listaDeCarros)
 
-    /**
-     * velocidadeAtual
-     */
-    public velocidadeAtual(): number
-    {
-        return this.velocidade;
-    }
-}
+//console.log(concessionaria.mostrarListaDeCarros());
 
-let carroA = new Carro("Civic", "Preto", 4);
-console.log(carroA)
-carroA.acelerar();
-console.log(carroA);
+/* Criando um objeto do tipo Pessoa (cliente)
+e comprando um carro*/
+
+let cliente = new Pessoa("Fábio","Civic");
+
+//console.log(cliente.dizerNome() + "\n" + cliente.dizerCarroPreferido());
+// link para metodos de variáveis do tipo "Arrays" https://www.w3schools.com/js/js_array_methods.asp
+concessionaria.mostrarListaDeCarros().map((carro: Carro) =>{
+    if(carro["modelo"] == cliente.dizerCarroPreferido())
+    // se o retorno for True (verdadeiro)
+    cliente.compraCarro(carro)
+})
+
+console.log(cliente.dizerCarroAtual());
