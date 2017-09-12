@@ -20,6 +20,9 @@ var Moto = /** @class */ (function (_super) {
         _this.cor = cor;
         return _this;
     }
+    Moto.prototype.acelerar = function () {
+        this.velocidade += 20;
+    };
     return Moto;
 }(Veiculo_1.default));
 /*-- outra forma de exportar uma classe
