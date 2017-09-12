@@ -16,6 +16,3 @@ let concessionaria = new Concessionaria("", [])
 console.log(carro.velocidadeAtual());
 console.log(moto.velocidadeAtual());
 console.log(concessionaria.fornecerHorariosDeFuncionamento());
-
-
-
