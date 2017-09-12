@@ -8,7 +8,7 @@ class Moto extends Veiculo{
     }
 
     public acelerar(): void {
-        this.velocidade += 20;
+        this.velocidade += 25;
         }
 }
 

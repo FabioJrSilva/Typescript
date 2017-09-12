@@ -9,7 +9,7 @@ let moto = new Moto("CG Titã", "Vermelha")
 moto.acelerar()
 moto.acelerar()
 
-console.log(carro);
-console.log(moto);
+console.log(carro.velocidadeAtual());
+console.log(moto.velocidadeAtual());
 
 

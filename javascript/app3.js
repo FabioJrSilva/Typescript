@@ -8,5 +8,5 @@ carro.acelerar();
 var moto = new Moto_1.default("CG Titã", "Vermelha");
 moto.acelerar();
 moto.acelerar();
-console.log(carro);
-console.log(moto);
+console.log(carro.velocidadeAtual());
+console.log(moto.velocidadeAtual());
